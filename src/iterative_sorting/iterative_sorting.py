@@ -14,29 +14,18 @@ def selection_sort(arr):
     return arr
 
 
-
 def bubble_sort(arr):
-    # n = len(arr)
-    # while not n <= 1:
-    #     newn = 0
-    #     for i in range(1, (n-1)):
-    #         if arr[i-1] > arr[i]:
-    #             arr[i-1], arr[i] = arr[i], arr[i-1]
-    #             newn = i 
-    #     n = newn
-    n = len(arr) 
-  
-    # Traverse through all array elements 
+    # initialize a variable to len of array
+    n = len(arr)
+
+    # Loop through input array
     for i in range(n): 
-  
         # Last i elements are already in place 
         for j in range(0, n-i-1): 
-  
-            # traverse the array from 0 to n-i-1 
-            # Swap if the element found is greater 
-            # than the next element 
+            # Compare each element to its neighbor
             if arr[j] > arr[j+1] : 
                 arr[j], arr[j+1] = arr[j+1], arr[j] 
+
     return arr
 
 '''
