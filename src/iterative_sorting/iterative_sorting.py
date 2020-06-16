@@ -1,32 +1,42 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements -> the entire array
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr)):
         cur_index = i
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
         for j in range(cur_index + 1, len(arr)):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
-        # TO-DO: swap
-        # Your code here
+        # Swap
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
-
 
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
-    # Your code here
-    for i in range(len(arr)-1):
-        for j in range(len(arr)-2):
-            if arr[i] > arr[i+1]:
-                arr[i], arr[i+1] = arr[i+1], arr[i]
 
+def bubble_sort(arr):
+    # n = len(arr)
+    # while not n <= 1:
+    #     newn = 0
+    #     for i in range(1, (n-1)):
+    #         if arr[i-1] > arr[i]:
+    #             arr[i-1], arr[i] = arr[i], arr[i-1]
+    #             newn = i 
+    #     n = newn
+    n = len(arr) 
+  
+    # Traverse through all array elements 
+    for i in range(n): 
+  
+        # Last i elements are already in place 
+        for j in range(0, n-i-1): 
+  
+            # traverse the array from 0 to n-i-1 
+            # Swap if the element found is greater 
+            # than the next element 
+            if arr[j] > arr[j+1] : 
+                arr[j], arr[j+1] = arr[j+1], arr[j] 
     return arr
 
 '''
@@ -51,3 +61,29 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
+# example code from guided lecture for insertion sort
+'''
+class Book:
+    def __init__(self, title, author, genre):
+        self.title = title 
+        self.author = author
+        self.genre = genre
+
+    def __str__(self):
+        return f"{self.title}"
+
+def insert_sort():
+    for i in range(1, len(arr_of_books)):
+        curr_book = arr_of_books[i]
+        book_index = i
+
+        while book_index > 0 and curr_book.title < arr_of_books[book_index -1].title:
+            arr_of_books[book_index], arr_of_books[book_index -1] = arr_of_books[book_index]
+
+        # Always decrement index when doing a swap
+            book_index -= 1
+
+    return arr_of_books
+'''
